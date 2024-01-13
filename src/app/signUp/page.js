@@ -6,7 +6,7 @@ import Image from 'next/image';
 import {useUserStore} from '../../store/useUser'
 import { useRouter } from 'next/navigation'
 
-export default SignUp = () => {
+const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -177,3 +177,5 @@ export default SignUp = () => {
     </>
   )
 }
+
+export default SignUp
