@@ -1,11 +1,48 @@
 "use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 const Chat = () => {
-  const [messages, setMessages] = useState(['hi', 'bey', 'hello from another sidehello from another sidehello from another sidehello from another sidehello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another sidehello from another sidehello from another sidehello from another sidehello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side','hi', 'bey', 'hello from another side']);
-  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([
+    "hi",
+    "bey",
+    "hello from another sidehello from another sidehello from another sidehello from another sidehello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another sidehello from another sidehello from another sidehello from another sidehello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+    "hi",
+    "bey",
+    "hello from another side",
+  ]);
+  const [input, setInput] = useState("");
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -19,14 +56,28 @@ const Chat = () => {
           {messages.map((msg, index) => (
             <li key={index} className="text-gray-50 pb-8">
               <div className="flex items-start gap-2.5">
-                <Image width={36} height={36} className="w-8 h-8 rounded-full" src="/logo.png" alt="Jese image" />
+                <Image
+                  width={36}
+                  height={36}
+                  className="w-8 h-8 rounded-full"
+                  src="/logo.png"
+                  alt="Jese image"
+                />
                 <div className="flex flex-col gap-1 w-full max-w-[320px]">
                   <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                    <span className="text-sm font-semibold text-slate-100 dark:text-white">Bonnie Green</span>
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+                    <span className="text-sm font-semibold text-slate-100 dark:text-white">
+                      Bonnie Green
+                    </span>
+                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                      11:46
+                    </span>
                   </div>
                   <div className="flex flex-col leading-1.5 p-4 border-gray-200 bg-slate-700 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-                    <p className="text-sm font-normal text-slate-100 dark:text-white"> That&apos;s awesome. I think our users will really appreciate the improvements.</p>
+                    <p className="text-sm font-normal text-slate-100 dark:text-white">
+                      {" "}
+                      That&apos;s awesome. I think our users will really
+                      appreciate the improvements.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -55,4 +106,3 @@ const Chat = () => {
 };
 
 export default Chat;
-// bg-slate-700
