@@ -1,20 +1,21 @@
 import React from "react";
+import Image from "next/image";
 
-function videoCard() {
-    return <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full rounded" src="https://placehold.co/600x400" alt="video play" />
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p class="text-slate-100 text-base">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+function videoCard({ description, title, img }) {
+    return <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-slate-700">
+        <Image className="w-full rounded" src={img} alt="video play" width={100} height={100} />
+        <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">{title}</div>
+            <p className="text-slate-100 text-base">
+                {description}
             </p>
         </div>
-        <div class="px-6 pt-4 pb-2">
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        <div className="px-6 pt-4 pb-2 flex justify-around  text-slate-100 text-sm font-semibold">
+            <button onClick={() => { }} className="bg-green-800 rounded px-3 py-1 mb-2">Stream</button>
+            <button onClick={() => { }} className=" bg-blue-500 rounded px-3 py-1 mb-2">Edit</button>
+            <button onClick={() => { }} className=" bg-red-700 rounded px-3 py-1 mb-2">Delete</button>
         </div>
-    </div>;
+    </div >;
 }
 
 export default videoCard;
