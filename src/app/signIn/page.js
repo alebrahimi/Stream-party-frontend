@@ -129,7 +129,7 @@ const SignIn = () => {
             <Link
               href={"/signUp"}
               className="flex justify-end underline text-blue-500 text-lg "
-              style={{ marginTop: "0px" }}
+              style={{ marginTop: "5px" }}
             >
               sing up
             </Link>
