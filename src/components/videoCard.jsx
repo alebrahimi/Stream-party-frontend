@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Link from 'next/link';
 
 function videoCard({ description, title, img, videoUrl }) {
     return <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-slate-700">
@@ -21,7 +21,7 @@ function videoCard({ description, title, img, videoUrl }) {
             </p>
         </div>
         <div className="px-6 pt-4 pb-2 flex justify-around  text-slate-100 text-sm font-semibold">
-            <button onClick={() => { }} className="bg-green-800 rounded px-3 py-1 mb-2">Stream</button>
+            <Link href={`/stream?url=${videoUrl}`} className="bg-green-800 rounded px-3 py-1 mb-2">Stream</Link>
             <button onClick={() => { }} className=" bg-blue-500 rounded px-3 py-1 mb-2">Edit</button>
             <button onClick={() => { }} className=" bg-red-700 rounded px-3 py-1 mb-2">Delete</button>
         </div>
