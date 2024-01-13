@@ -60,12 +60,12 @@ export default function SignUp() {
             height={36}
             alt="Your Company"
           />
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-ellipsis">
+          <h2 className="mt-5 text-center text-2xl font-bold leading-9 tracking-tight text-ellipsis">
             upload a new video
           </h2>
         </div>
 
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" action="#" method="POST">
             <div>
               <label htmlFor="videoTitle" className="block text-sm font-medium leading-6 text-ellipsis">
@@ -79,7 +79,7 @@ export default function SignUp() {
                   onChange={(e) => setVideoTitle(e.target.value)}
                   value={videoTitle}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="outline-none block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function SignUp() {
                   onChange={(e) => setVideoDiscrption(e.target.value)}
                   value={videoDiscrption}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="outline-none block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -117,7 +117,7 @@ export default function SignUp() {
                   onChange={(e) => setVedioUpload(e.target.value)}
                   value={vedioUpload}
                   required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  className="outline-none block w-full rounded-md border-0 py-1.5 px-3 text-slate-100 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function SignUp() {
               <button
                 type="submit"
                 onClick={submiting}
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-ellipsis shadow-sm hover:bg-blue:600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 upload file
               </button>
