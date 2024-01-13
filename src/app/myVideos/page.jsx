@@ -12,7 +12,7 @@ function MyVideos() {
    useEffect(() => {
 
       if (!user) {
-         router.push("/logIn")
+         router.push("/signIn")
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [user])

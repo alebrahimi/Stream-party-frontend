@@ -58,7 +58,7 @@ const ProfileMenu = () => {
           </Link>
           <Link
             href="/"
-            onClick={() => { clearUser(); router.push("/logIn") }}
+            onClick={() => { clearUser(); router.push("/signIn") }}
             className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  focus:outline-none text-gray-300 hover:text-gray-200 focus:bg-gray-600"
           >
             <svg xmlns="http://www.w3.org/2000/svg"
