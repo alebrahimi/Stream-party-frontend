@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import Link from 'next/link';
 import { useUserStore } from "../store/useUser";
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 const ProfileMenu = () => {
   const user = useUserStore((state) => state.user);
   const clearUser = useUserStore((state) => state.clearUser);
   const pathName = usePathname()
+  const router = useRouter()
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
@@ -26,7 +28,7 @@ const ProfileMenu = () => {
           onClick={toggleDropdown}
           className="w-8 h-8  flex justify-center items-center gap-x-2 text-sm font-medium rounded-full border border-slate-700 bg-slate-600 text-slate-100 shadow-sm outline-none p-2"
         >
-          {user.name.charAt(0)}
+          {user?.name.charAt(0)}
         </button>
 
         <div
@@ -56,7 +58,7 @@ const ProfileMenu = () => {
           </Link>
           <Link
             href="/"
-            onClick={() => { clearUser() }}
+            onClick={() => { clearUser(); router.push("/logIn") }}
             className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm  focus:outline-none text-gray-300 hover:text-gray-200 focus:bg-gray-600"
           >
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +79,7 @@ const ProfileMenu = () => {
           </Link>
         </div>
       </div>
-      <h3>{user.name}</h3>
+      <h3>{user?.name}</h3>
     </div>
   );
 };
