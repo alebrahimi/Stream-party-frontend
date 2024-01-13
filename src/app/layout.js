@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         className={`${inter.className} bg-slate-800 text-slate-100 h-[100vh] mx-auto p-4 flex flex-col container`}
       >
         <Navbar />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 my-10">{children}</div>
         <Footer />
       </body>
     </html>
