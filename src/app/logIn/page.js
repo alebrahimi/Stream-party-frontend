@@ -3,34 +3,43 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from 'next/image';
+import {useUserStore} from '../../store/useUser'
+import { useRouter } from 'next/navigation'
 
 export default function LogIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [ errMsg,setErrMsg] = useState('');
 
-  const submiting = async (e) => {
+  const user = useUserStore((state) => state.user);
+  const setUser = useUserStore((state) => state.setUser);
+  
+  const router = useRouter()
+
+  const submitLogin = async (e) => {
     e.preventDefault();
 
-    if (isPasswordValid === '' || isEmailValid === '') {
+    if (password === '' || email === '') {
       setErrMsg('Invalid Entry');
       return;
     }
 
     try {
-      const response = await fetch('https://your-api-endpoint.com/register', {
+      const response = await fetch(`http://localhost:3000/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email,
+          username: email,
           password,
         }),
       });
   
       if (response.ok) {
-        localStorage.setItem('jwt', response.jwt)
+        const userData = await response.json();
+        setUser(userData)
+        router.push("/home")
       } else {
         console.error('Account creation failed.');
         const data = await response.json();
@@ -105,7 +114,7 @@ export default function LogIn() {
             <div>
               <button
                 type="submit"
-                onClick={submiting}
+                onClick={submitLogin}
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-ellipsis shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Log in
