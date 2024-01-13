@@ -1,9 +1,19 @@
 import React from "react";
 import Image from "next/image";
 
-function videoCard({ description, title, img }) {
+function videoCard({ description, title, img, videoUrl }) {
     return <div className="max-w-sm rounded-xl overflow-hidden shadow-md bg-slate-700">
-        <Image className="w-full rounded" src={img} alt="video play" width={100} height={100} />
+        {/* <Image className="w-full rounded" src={img} alt="video play" width={100} height={100} /> */}
+        <iframe
+            width="640"
+            height="360"
+            src={videoUrl}
+            title="Build Your Own Video Streaming Platform | It&#39;s Easier Than You Might Think!"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        ></iframe>;
+
         <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">{title}</div>
             <p className="text-slate-100 text-base">
