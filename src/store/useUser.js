@@ -6,6 +6,7 @@ export const useUserStore = create(
     (set) => ({
       user: undefined,
       setUser: (newUser) => set({ user: newUser }),
+      clearUser: () => set({ user: undefined }),
     }),
     {
       name: 'user',
